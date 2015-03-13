@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+message_file = ARGV[0]
+message = File.read(message_file)
+
+$regex = /^(\d+ -)/
+
+if !$regex.match(message)
+  puts <<-EOS
+ಠ_ಠ Looks like your commit message does not start with its Pivotal Tracker Story ID
+A good commit message looks like this:
+
+  9532134 - I did something awesome to improve some feature
+
+If you have no Story ID use 0 instead:
+
+  0 - Some rogue taks I did
+
+Thanks!
+  EOS
+  exit 1
+end
