@@ -14,9 +14,9 @@ A good commit message looks like this:
 
 If you have no Story ID use 0 instead:
 
-  0 - Some rogue taks I did
+  0 - Some rogue task I did
 
-Thanks!
+Thanks for making our git history awesome!
   EOS
   exit 1
 end
