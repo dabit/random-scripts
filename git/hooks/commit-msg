@@ -3,18 +3,18 @@
 message_file = ARGV[0]
 message = File.read(message_file)
 
-$regex = /^(\d+ -)/
+$regex = /^\[(#\d+|chore)\]/
 
 if !$regex.match(message)
   puts <<-EOS
 ಠ_ಠ Looks like your commit message does not start with its Pivotal Tracker Story ID
 A good commit message looks like this:
 
-  9532134 - I did something awesome to improve some feature
+  [#9532134] I did something awesome to improve some feature
 
 If you have no Story ID use 0 instead:
 
-  0 - Some rogue task I did
+  [chore] Some rogue task I did
 
 Thanks for making our git history awesome!
   EOS
