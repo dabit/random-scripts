@@ -3,7 +3,7 @@
 message_file = ARGV[0]
 message = File.read(message_file)
 
-$regex = /^\[(#\d+|chore)\]/
+$regex = /^(\[(#\d+|chore)\])|(Merge)/
 
 if !$regex.match(message)
   puts <<-EOS
