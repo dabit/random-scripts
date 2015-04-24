@@ -3,7 +3,7 @@
 message_file = ARGV[0]
 message = File.read(message_file)
 
-$regex = /^(\[(#\d+|chore)\])|(Merge)/
+$regex = /^(\[(#\d+|chore|features)\])|(Merge)/
 
 if !$regex.match(message)
   puts <<-EOS
@@ -12,7 +12,7 @@ A good commit message looks like this:
 
   [#9532134] I did something awesome to improve some feature
 
-If you have no Story ID use 0 instead:
+If you have no Story ID use [chore] instead:
 
   [chore] Some rogue task I did
 
